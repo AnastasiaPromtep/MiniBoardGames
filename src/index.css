@@ -17,6 +17,10 @@ ol, ul {
   display: table;
 }
 
+.victorySquare {
+    color: green;
+}
+
 .status {
   margin-bottom: 10px;
 }
