@@ -35,12 +35,12 @@ class Board extends React.Component {
         super(props);
         this.numberOfColumn = 3;
         this.numberOfRows = 3;
-        this.y = 3;
     }
 
     renderSquare(i) {
     return (
       <Square
+      key={i}
       value={this.props.squares[i]}
       onClick={() => this.props.onClick(i)}
       />
@@ -54,7 +54,7 @@ class Board extends React.Component {
           rows.push(this.renderSquare(i + n));
       }
       return (
-          <div className="board-row">
+          <div className="board-row" key={i}>
             {rows}
           </div>
       );
@@ -63,7 +63,6 @@ class Board extends React.Component {
   render() {
       const lines = [];
       for (let i = 0; i < this.numberOfRows; i++) {
-          console.log('a');
           lines.push(this.renderLine(i * 3));
       }
       return (
